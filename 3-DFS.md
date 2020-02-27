@@ -121,3 +121,103 @@ public:
 };
 ```
 
+
+
+### 深度优先的非递归实现
+
+* 使用栈，将待处理元素入栈
+* **入栈顺序**  及  **访问顺序** 决定整体的搜索过程
+
+```c++
+// pre_order：先根序遍历
+void DFS_stack_pre_order(BSTNode* node)
+{
+	std::stack<BSTNode*> stack;
+
+	if (node != NULL)
+	{
+		stack.push(node);
+	}
+
+	while (!stack.empty())
+	{
+		BSTNode* current = stack.top();
+		stack.pop();
+		
+		visit(current);
+
+		// | left  |
+		// | right |
+		if (current->right != NULL && !current->right->visited)
+		{
+			stack.push(current->right);
+		}
+		if (current->left != NULL && !current->left->visited)
+		{
+			stack.push(current->left);
+		}		
+	}
+}
+```
+
+
+
+```c++
+void DFS_stack_in_order(BSTNode* node)
+{
+	std::stack<BSTNode*> stack;
+
+	while (node != NULL || !stack.empty())
+	{
+		// left first
+		if (node != NULL)
+		{
+			stack.push(node);
+			node = node->left;
+		}
+		else
+		{
+			// visit then right
+			node = stack.top();
+			stack.pop();
+
+			visit(node);
+
+			node = node->right;
+		}
+	}
+}
+
+void DFS_stack_post_order(BSTNode* node)
+{
+	std::stack<BSTNode*> stack;
+
+	BSTNode* last_node_visited = NULL;
+	while (node != NULL || !stack.empty())
+	{
+		if (node != NULL)
+		{
+			stack.push(node);
+			node = node->left;
+		}
+		else
+		{
+			BSTNode* peek_node = stack.top();
+
+			if (peek_node->right != NULL 
+				&& peek_node->right != last_node_visited)
+			{
+				node = peek_node->right;
+			}
+			else
+			{
+				// Left first
+				visit(peek_node);
+				last_node_visited = stack.top();
+				stack.pop();
+			}
+		}
+	}
+}
+```
+
