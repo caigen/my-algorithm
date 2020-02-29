@@ -83,7 +83,7 @@ typora-root-url: ./
 - Find the Missing Number (easy)
 - Find the Smallest Missing Positive Number (medium)
 
-<img src="/14patterns/5-cyclic-sort.png" style="zoom:33%;" />
+<img src="/14patterns/5-cyclic-sort.png" style="zoom: 50%;" />
 
 ### 6. 就地逆转链表
 

@@ -54,3 +54,14 @@ for (auto iter = hash.begin(); iter != hash.end(); ++iter)
 int numbers[] = {20,40,50,10,30};
 std::sort(numbers, numbers+5, std::greater<int>());
 ```
+
+
+
+### string
+
+```c++
+std::string str ("Test string");
+str.length();
+
+```
+
