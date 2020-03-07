@@ -27,27 +27,6 @@ std::greater<int>
 
 
 
-### priority_queue as Heap
-
-```c++
-std::priority_queue<std::pair<int, int>> heap;
-std::priority_queue<int,  std::vector<int>, std::greater<int>> min_heap;
-```
-
-
-
-### unordered_map as Hash
-
-```c++
-std::unordered_map<int, int> hash;
-for (auto iter = hash.begin(); iter != hash.end(); ++iter)
-{
-	std::cout << iter->first << "," << iter->second << std::endl;
-}
-```
-
-
-
 ### sort
 
 ```c++
@@ -57,11 +36,35 @@ std::sort(numbers, numbers+5, std::greater<int>());
 
 
 
-### string
-
 ```c++
+// string
 std::string str ("Test string");
 str.length();
 
+// list
+std::list<int> l = {1, 2, 3};
+l.front();
+l.back()
+l.push_front(0);
+l.push_back(4);
+l.pop_front();
+l.pop_back();
+
+// priority_queue as heap
+std::priority_queue<std::pair<int, int>> heap;
+std::priority_queue<int,  std::vector<int>, std::greater<int>> min_heap;
+
+// unordered_map as hash
+std::unordered_map<int, int> hash;
+for (auto iter = hash.begin(); iter != hash.end(); ++iter)
+{
+	std::cout << iter->first << "," << iter->second << std::endl;
+}
+
+// deque
+dq.push_back();
+dq.push_front();
+dq.pop_back();
+dq.pop_front();
 ```
 
