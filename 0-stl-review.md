@@ -1,8 +1,7 @@
 ## C++ STL
 
-### pair
-
 ```c++
+// pair
 std::pair<int, int> dir[4] = {
     std::make_pair(-1, 0),
     std::make_pair( 1, 0),
@@ -13,30 +12,16 @@ std::pair<int, int> dir[4] = {
 auto p = dir[0];
 pair.first;
 pair.second;
-```
 
+// swap and compare
+std::swap(a, b);
+std::less<int>;
+std::greater<int>;
 
-
-### swap and compare
-
-```c++
-std::swap()
-std::less<int>
-std::greater<int>
-```
-
-
-
-### sort
-
-```c++
+// sort
 int numbers[] = {20,40,50,10,30};
 std::sort(numbers, numbers+5, std::greater<int>());
-```
 
-
-
-```c++
 // string
 std::string str ("Test string");
 str.length();
@@ -50,6 +35,12 @@ l.push_back(4);
 l.pop_front();
 l.pop_back();
 
+// deque
+dq.push_front();
+dq.push_back();
+dq.pop_front();
+dq.pop_back();
+
 // priority_queue as heap
 std::priority_queue<std::pair<int, int>> heap;
 std::priority_queue<int,  std::vector<int>, std::greater<int>> min_heap;
@@ -60,11 +51,11 @@ for (auto iter = hash.begin(); iter != hash.end(); ++iter)
 {
 	std::cout << iter->first << "," << iter->second << std::endl;
 }
+```
 
-// deque
-dq.push_back();
-dq.push_front();
-dq.pop_back();
-dq.pop_front();
+
+
+```c++
+
 ```
 
