@@ -51,6 +51,12 @@ for (auto iter = hash.begin(); iter != hash.end(); ++iter)
 {
 	std::cout << iter->first << "," << iter->second << std::endl;
 }
+
+// unordered_set as hash
+std::unordered_set<int> hash;
+hash.erase();
+hash.insert();
+hash.count();
 ```
 
 
